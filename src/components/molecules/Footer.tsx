@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Container,
@@ -6,7 +7,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { SocialButton } from "./SocialButton";
+import { SocialButton } from "../atoms/SocialButton";
+
+const socialButtonSize = 8;
 
 export const Footer = () => {
   return (
@@ -24,15 +27,15 @@ export const Footer = () => {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
-        <Text>© 2021 GucciDoge. All rights reserved</Text>
+        <Text>© 2021 The Eclectors. All rights reserved</Text>
         <Stack direction={"row"} spacing={6}>
-          <SocialButton label={"Twitter"} href={"#"}>
+          <SocialButton label={"Twitter"} href={"#"} size={socialButtonSize}>
             <FaTwitter />
           </SocialButton>
-          <SocialButton label={"YouTube"} href={"#"}>
+          <SocialButton label={"YouTube"} href={"#"} size={socialButtonSize}>
             <FaYoutube />
           </SocialButton>
-          <SocialButton label={"Instagram"} href={"#"}>
+          <SocialButton label={"Instagram"} href={"#"} size={socialButtonSize}>
             <FaInstagram />
           </SocialButton>
         </Stack>

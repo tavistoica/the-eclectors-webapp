@@ -6,31 +6,33 @@ import {
   IconButton,
   useDisclosure,
   Stack,
-  Image,
-  Link,
   Center,
   Button,
 } from "@chakra-ui/react";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
-import { NavLink } from "./NavLink";
-import logo from "../assets/logo.png";
-import { BuyButton } from "./BuyButton";
+import { scroller } from "react-scroll";
 
 const Links = [
-  { title: "Overview", href: "#" },
-  { title: "Why GucciDoge?", href: "#" },
-  { title: "Roadmap", href: "#" },
-  { title: "Tokenomics", href: "#" },
-  { title: "Token Structure", href: "#" },
+  { title: "Overview", class: "front-page" },
+  { title: "Who we are?", class: "who-page" },
+  { title: "Listen Live", class: "listen-page" },
 ];
 
 interface NavBarProps {
   ref: React.RefObject<HTMLInputElement>;
 }
 
-export const NavBar: React.FC<NavBarProps> = ({ ref }) => {
+export const NavBar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [backgroundOn, setBackgroundOn] = useState(false);
+
+  const scrollTo = (className: string) => {
+    scroller.scrollTo(className, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
 
   const hamburgerHandler = () => {
     if (isOpen) {
@@ -60,8 +62,8 @@ export const NavBar: React.FC<NavBarProps> = ({ ref }) => {
         top: 0,
         zIndex: 99,
       }}
-      bg={backgroundOn ? "brand.900" : "#FDD76B"}
-      boxShadow={backgroundOn ? "lg" : ""}
+      bg={backgroundOn ? "whiteAlpha.600" : "#f2f2f2"}
+      boxShadow="dark-lg"
     >
       <Flex
         px={{ base: 1, md: 4 }}
@@ -70,27 +72,18 @@ export const NavBar: React.FC<NavBarProps> = ({ ref }) => {
         justify={{ base: "space-between", md: "flex-end" }}
         w="100%"
       >
-        <Flex justify={{ md: "center" }} w="100%">
-          <Box as={Link} href="#">
-            <Image
-              src={logo}
-              height={{ base: 10, md: 16 }}
-              alt="GucciDoge Logo"
-            />
-          </Box>
-        </Flex>
         <HStack
           as={"nav"}
           spacing={4}
+          padding={3}
           display={{ base: "none", md: "flex" }}
           fontSize={{ base: 20, md: 30 }}
         >
           {Links.map((link) => (
-            <NavLink key={link.title} href={link.href}>
+            <Button key={link.title} onClick={() => scrollTo(link.class)}>
               {link.title}
-            </NavLink>
+            </Button>
           ))}
-          <BuyButton />
         </HStack>
         <Center>
           <IconButton
@@ -108,11 +101,10 @@ export const NavBar: React.FC<NavBarProps> = ({ ref }) => {
         <Flex py={4} display={{ md: "none" }}>
           <Stack as={"nav"} spacing={4}>
             {Links.map((link) => (
-              <NavLink key={link.title} href={link.href}>
+              <Button key={link.title} onClick={() => scrollTo(link.class)}>
                 {link.title}
-              </NavLink>
+              </Button>
             ))}
-            <BuyButton />
           </Stack>
         </Flex>
       ) : null}

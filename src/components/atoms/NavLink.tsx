@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { Button, Link } from "@chakra-ui/react";
 
 export const NavLink = ({
@@ -15,7 +15,7 @@ export const NavLink = ({
       py={1}
       variant="link"
       rounded={"md"}
-      color="blackAlpha.900"
+      color="blackAlpha.700"
       _hover={{
         textDecoration: "none",
         color: "hover.500",

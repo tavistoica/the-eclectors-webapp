@@ -1,16 +1,16 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import {
   Box,
   SimpleGrid,
-  Icon,
   Text,
   Stack,
   Flex,
   Center,
+  Image,
 } from "@chakra-ui/react";
-import { GrGroup } from "react-icons/gr";
-import { IoWalletOutline } from "react-icons/io5";
-import { RiSafe2Line } from "react-icons/ri";
+import Vlad from "../assets/vladDumitru.jpg";
+import Darius from "../assets/dariusCarstea.jpg";
+import { WHO_PAGE_CONSTANTS } from "../helpers/constants";
 
 interface FeatureProps {
   title: string;
@@ -30,8 +30,8 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
       <Flex direction="column" justify="center">
         <Center>
           <Flex
-            w={16}
-            h={16}
+            w={500}
+            h={500}
             align={"center"}
             justify={"center"}
             color={"white"}
@@ -59,6 +59,7 @@ export const WhatIs = () => {
       pt={{ base: 10, md: 14 }}
       pb={{ base: 5, md: 8 }}
       justify="center"
+      className={WHO_PAGE_CONSTANTS.CLASS_NAME}
     >
       <Box maxW={{ base: "90%", md: "80%" }}>
         <Center>
@@ -67,34 +68,33 @@ export const WhatIs = () => {
             fontWeight="bold"
             fontSize={{ base: "1xl", md: "3xl" }}
           >
-            🐕 What is $GDOGE? 🐕
+            {WHO_PAGE_CONSTANTS.PAGE_TITLE}
           </Text>
         </Center>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={20}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={20}>
           <Feature
-            icon={<Icon as={GrGroup} w={50} h={50} />}
-            title={"Community Power"}
-            text={
-              "$GDOGE is fully decentralized and owned by its fun, vibrant community. We welcome and embrace diverse perspectives to build KISHU into the best community in crypto."
+            icon={
+              <Image
+                boxSize="100%"
+                objectFit="cover"
+                src={Vlad}
+                alt={WHO_PAGE_CONSTANTS.VLAD}
+              />
             }
+            title={WHO_PAGE_CONSTANTS.VLAD}
+            text={WHO_PAGE_CONSTANTS.VLAD_TEXT}
           />
           <Feature
             icon={
-              <Icon as={IoWalletOutline} w={50} h={50} color="blackAlpha.900" />
+              <Image
+                boxSize="100%"
+                objectFit="cover"
+                src={Darius}
+                alt={WHO_PAGE_CONSTANTS.DARIUS}
+              />
             }
-            title={"Instant Reward"}
-            text={
-              "For every transaction in GucciDoge's network (buy or sell), 2% of the transaction is distributed to existing holders. That means you earn GucciDoge just by holding it in your wallet."
-            }
-          />
-          <Feature
-            icon={
-              <Icon as={RiSafe2Line} w={50} h={50} color="blackAlpha.900" />
-            }
-            title={"Secure and Safe"}
-            text={
-              "$GDOGE has been audited by a third-party firm to give our holders confidence."
-            }
+            title={WHO_PAGE_CONSTANTS.DARIUS}
+            text={WHO_PAGE_CONSTANTS.DARIUS_TEXT}
           />
         </SimpleGrid>
       </Box>

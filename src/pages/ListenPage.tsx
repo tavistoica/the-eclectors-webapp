@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import {
   Box,
   SimpleGrid,
@@ -9,8 +9,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { GrGroup } from "react-icons/gr";
-import { IoWalletOutline } from "react-icons/io5";
-import { RiSafe2Line } from "react-icons/ri";
+import { LISTEN_PAGE_CONSTANTS } from "../helpers/constants";
 
 interface FeatureProps {
   title: string;
@@ -59,11 +58,12 @@ export const HowToBuy = () => {
       pt={{ base: 10, md: 14 }}
       pb={{ base: 5, md: 8 }}
       justify="center"
+      className={LISTEN_PAGE_CONSTANTS.CLASS_NAME}
     >
       <Box maxW={{ base: "90%", md: "80%" }}>
         <Center>
           <Text py={{ md: 12 }} fontWeight="bold" fontSize="3xl">
-            🐕 How to buy $GDOGE? 🐕
+            {LISTEN_PAGE_CONSTANTS.PAGE_TITLE}
           </Text>
         </Center>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={20}>
@@ -72,24 +72,6 @@ export const HowToBuy = () => {
             title={"Community Power"}
             text={
               "$GDOGE is fully decentralized and owned by its fun, vibrant community. We welcome and embrace diverse perspectives to build KISHU into the best community in crypto."
-            }
-          />
-          <Feature
-            icon={
-              <Icon as={IoWalletOutline} w={50} h={50} color="blackAlpha.900" />
-            }
-            title={"Instant Reward"}
-            text={
-              "For every transaction in GucciDoge's network (buy or sell), 2% of the transaction is distributed to existing holders. That means you earn GucciDoge just by holding it in your wallet."
-            }
-          />
-          <Feature
-            icon={
-              <Icon as={RiSafe2Line} w={50} h={50} color="blackAlpha.900" />
-            }
-            title={"Secure and Safe"}
-            text={
-              "GucciDoge has been audited by a third-party firm to give our holders confidence."
             }
           />
         </SimpleGrid>

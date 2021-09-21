@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
-import { Main } from "../pages/Main";
+import { Main } from "../Main";
 
 interface RouterProps {}
 
