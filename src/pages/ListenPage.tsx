@@ -8,7 +8,7 @@ import {
   Flex,
   Center,
 } from "@chakra-ui/react";
-import { GrGroup } from "react-icons/gr";
+import { GrMusic } from "react-icons/gr";
 import { LISTEN_PAGE_CONSTANTS } from "../helpers/constants";
 
 interface FeatureProps {
@@ -23,7 +23,7 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
       bg="white"
       shadow={"xl"}
       rounded={"lg"}
-      px={{ base: 2, md: 4 }}
+      px={{ base: 1, md: 1 }}
       py={"5"}
     >
       <Flex direction="column" justify="center">
@@ -60,19 +60,21 @@ export const HowToBuy = () => {
       justify="center"
       className={LISTEN_PAGE_CONSTANTS.CLASS_NAME}
     >
-      <Box maxW={{ base: "90%", md: "80%" }}>
+      <Box maxW={{ base: "90%", md: "80%" }} minW={{ base: "90%" }}>
         <Center>
           <Text py={{ md: 12 }} fontWeight="bold" fontSize="3xl">
             {LISTEN_PAGE_CONSTANTS.PAGE_TITLE}
           </Text>
         </Center>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={20}>
+        <SimpleGrid
+          columns={{ base: 1, md: 1 }}
+          spacing={20}
+          minH={{ base: "400px" }}
+        >
           <Feature
-            icon={<Icon as={GrGroup} w={50} h={50} />}
-            title={"Community Power"}
-            text={
-              "$GDOGE is fully decentralized and owned by its fun, vibrant community. We welcome and embrace diverse perspectives to build KISHU into the best community in crypto."
-            }
+            icon={<Icon as={GrMusic} w={50} h={50} />}
+            title={""}
+            text={"Listen Live music"}
           />
         </SimpleGrid>
       </Box>

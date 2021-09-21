@@ -28,7 +28,7 @@ export const FrontPage: React.FC = () => {
         direction={{ base: "column", md: "row" }}
       >
         <Flex flex={1}>
-          <Image src={logo} width={{ base: "100%", md: "100%" }} />
+          <Image src={logo} width={{ base: "120%", md: "120%" }} />
         </Flex>
         <Stack flex={1} spacing={{ base: 5, md: 10 }} color="#2c2c2c">
           <Center>

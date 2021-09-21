@@ -11,11 +11,16 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import { scroller } from "react-scroll";
+import {
+  LISTEN_PAGE_CONSTANTS,
+  FRONT_PAGE_CONSTANTS,
+  WHO_PAGE_CONSTANTS,
+} from "../../helpers/constants";
 
 const Links = [
-  { title: "Overview", class: "front-page" },
-  { title: "Who we are?", class: "who-page" },
-  { title: "Listen Live", class: "listen-page" },
+  { title: "Overview", class: FRONT_PAGE_CONSTANTS.CLASS_NAME },
+  { title: "Who are The Eclectors?", class: WHO_PAGE_CONSTANTS.CLASS_NAME },
+  { title: "Listen Live", class: LISTEN_PAGE_CONSTANTS.CLASS_NAME },
 ];
 
 interface NavBarProps {
