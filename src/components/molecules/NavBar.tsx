@@ -33,6 +33,7 @@ export const NavBar: React.FC = () => {
       delay: 0,
       smooth: "easeInOutQuart",
     });
+    onClose();
   };
 
   const hamburgerHandler = () => {
