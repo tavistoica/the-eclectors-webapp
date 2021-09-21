@@ -71,7 +71,7 @@ export const WhatIs = () => {
             {WHO_PAGE_CONSTANTS.PAGE_TITLE}
           </Text>
         </Center>
-        <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={20}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={20}>
           <Feature
             icon={
               <Image
