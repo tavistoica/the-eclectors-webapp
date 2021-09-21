@@ -23,10 +23,6 @@ const Links = [
   { title: "Listen Live", class: LISTEN_PAGE_CONSTANTS.CLASS_NAME },
 ];
 
-interface NavBarProps {
-  ref: React.RefObject<HTMLInputElement>;
-}
-
 export const NavBar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [backgroundOn, setBackgroundOn] = useState(false);
